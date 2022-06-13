@@ -1,0 +1,20 @@
+{
+    "units": [
+        {
+            "id": "312412414",
+            "name": "Unit 301",
+            "location": "Storeromm Innsbruck",
+            "status": "Maintenance",
+            "unitsize": "50m2",
+            "language": "en"
+        },
+        {
+            "id": "312412412",
+            "name": "Unit 300",
+            "location": "Storeromm Innsbruck",
+            "status": "Booked",
+            "unitsize": "100m2",
+            "language": "en"
+        }
+    ]
+}
