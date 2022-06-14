@@ -15,6 +15,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $description
  * @property bool $is_archived
  * @property int $location_id
+ * @property int $language_id
  * @property Carbon $created_at
  * @property Carbon|null $updated_at
  * 
@@ -24,6 +25,8 @@ use Illuminate\Database\Eloquent\Model;
 class UnitType extends Model
 {
     protected $table = 'unittypes';
+    protected $guarded = ['id', 'created_at', 'updated_at' ];
+    protected $fillable = ['name', 'size','short_description', 'description', 'is_archived', 'language_id'];
 
     public function location(): BelongsTo
     {

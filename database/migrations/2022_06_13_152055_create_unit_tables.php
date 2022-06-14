@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-         Schema::create('languages', function (Blueprint $table) {
+        Schema::create('languages', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('code');
@@ -27,11 +27,11 @@ return new class extends Migration
             $table->string('description')->nullable();
             $table->boolean('is_archived');
             $table->unsignedBigInteger('language_id');
-            $table->foreign('language_id')->references('id')->on('languages')->onDelete('CASCADE');
+            $table->foreign('language_id')->references('id')->on('languages');
             $table->timestamps();
         });
 
-        Schema::create('locations', function (Blueprint $table) {
+        Schema::create('locations', function (Blueprint $table) { 
             $table->id();
             $table->string('name');
             $table->string('country');
@@ -42,8 +42,8 @@ return new class extends Migration
             $table->string('email')->nullable();
             $table->unsignedBigInteger('unittype_id');
             $table->unsignedBigInteger('language_id');
-            $table->foreign('unittype_id')->references('id')->on('unittypes')->onDelete('CASCADE');
-            $table->foreign('language_id')->references('id')->on('languages')->onDelete('CASCADE');
+            $table->foreign('unittype_id')->references('id')->on('unittypes');
+            $table->foreign('language_id')->references('id')->on('languages');
             $table->timestamps();
         });  
 
@@ -63,9 +63,9 @@ return new class extends Migration
             $table->unsignedBigInteger('unit_type_id');
             $table->unsignedBigInteger('location_id');
             $table->unsignedBigInteger('language_id');
-            $table->foreign('location_id')->references('id')->on('locations')->onDelete('CASCADE');
-            $table->foreign('unit_type_id')->references('id')->on('unittypes')->onDelete('CASCADE');
-            $table->foreign('language_id')->references('id')->on('languages')->onDelete('CASCADE');
+            $table->foreign('location_id')->references('id')->on('locations');
+            $table->foreign('unit_type_id')->references('id')->on('unittypes');
+            $table->foreign('language_id')->references('id')->on('languages');
             $table->timestamps();
         });
     }
